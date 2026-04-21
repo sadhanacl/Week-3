@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>ShopEasy</h2>
+    <div>
+        <a href="#login">Login</a>
+        <a href="#register">Register</a>
+        <a href="#catalog">Catalog</a>
+        <a href="#cart">Cart</a>
+    </div>
+</nav>
+
+<!-- REGISTER (UNCHANGED FROM PREVIOUS FINAL VERSION) -->
+<section id="register">
+    <h2>Register</h2>
+    <div class="form-box">
+
+        <input type="text" id="fname" placeholder="First Name">
+        <small class="error" id="fnameError"></small>
+
+        <input type="text" id="lname" placeholder="Last Name">
+        <small class="error" id="lnameError"></small>
+
+        <input type="text" id="username" placeholder="Username">
+        <small class="error" id="usernameError"></small>
+
+        <input type="email" id="email" placeholder="Email">
+        <small class="error" id="emailError"></small>
+
+        <input type="password" id="password" placeholder="Password">
+        <small class="error" id="passwordError"></small>
+
+        <input type="password" id="confirmPassword" placeholder="Confirm Password">
+        <small class="error" id="confirmPasswordError"></small>
+
+        <button class="btn" type="button" onclick="validateForm()">Register</button>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+    <h2>Login</h2>
+    <div class="form-box">
+        <input type="text" id="loginUsername" placeholder="Username">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <small class="error" id="loginError"></small>
+        <button class="btn" type="button" onclick="validateLogin()">Login</button>
+    </div>
+</section>
+
+
+<!-- CATALOG -->
+<section id="catalog">
+    <h2>Product Catalog</h2>
+    <div class="products">
+
+        <div class="product">
+            <h3>Notebook</h3>
+            <p class="price">100</p>
+            <button class="btn" onclick="addToCart('Notebook',100)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Pen Set</h3>
+            <p class="price">150</p>
+            <button class="btn" onclick="addToCart('Pen Set',150)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <h3>Backpack</h3>
+            <p class="price">1200</p>
+            <button class="btn" onclick="addToCart('Backpack',1200)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- CART -->
+<section id="cart">
+    <h2>Your Cart</h2>
+
+    <div class="cart" id="cartItems"></div>
+
+    <h3 style="text-align:center; margin-top:20px;">
+        Total: ₹<span id="total">0</span>
+    </h3>
+</section>
+
+</body>
+</html>
